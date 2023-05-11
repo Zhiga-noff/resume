@@ -1,8 +1,6 @@
 export function buttonHoverAnimation() {
   // Получаю блок в котором находят нужные кнопки
   const blockSelector = document.querySelectorAll('.template-block__row');
-  console.log(blockSelector);
-
   blockSelector.forEach((item) => {
     // Получаю кнопку внутри блока
     const buttonSelector = item.querySelector('.button-move');

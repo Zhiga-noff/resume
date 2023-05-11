@@ -1,0 +1,20 @@
+a .midnightHeader {
+
+	&.default {
+		margin: 0.94rem 0 0 1.25rem;
+		.midnightInner {
+			height: 60px;
+		}
+	}
+	&.white {
+		color: #fff;
+		margin: 0.94rem 0 0 1.25rem;
+	}
+}
+
+.header__burger .midnightHeader {
+	width: 1.56rem;
+	height: 1rem;
+	cursor: pointer;
+	position: fixed;
+}

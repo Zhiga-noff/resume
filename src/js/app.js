@@ -20,11 +20,8 @@ midnight();
 createHeader();
 createFooter();
 
-// Start midnight
-$(document).ready(function () {
-  // Change this to the correct selector.
-  $('header').midnight();
-});
+  // Функция midnight
+  $('.header__logo a').midnight();
 
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelectorAll('.header__menu');
@@ -38,3 +35,9 @@ burger.addEventListener('click', (event) => {
   bodyElement.classList.toggle('lock');
   burger.classList.toggle('active');
 });
+
+flsFunction.recolorBurger(logo, burger)
+
+window.addEventListener('scroll', ()=>{
+  flsFunction.recolorBurger(logo, burger)
+})
