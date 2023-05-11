@@ -287,7 +287,7 @@ body {
 .main {
   padding: 8.75rem 1.25rem 1.56rem 0.75rem;
   z-index: 3;
-  opacity: 0;
+  opacity: 1;
   transition-duration: 3s;
 
   &.active {
@@ -308,6 +308,12 @@ body {
   &__name {
     font-size: 17.875rem;
     line-height: 14.75rem;
+    transform: translate(-31.25rem,0);
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
   }
 
   &__column {
@@ -319,17 +325,47 @@ body {
 
   &__info {
     width: 11.75rem;
+    &_second-anim {
+      transform: translate(0,-10rem);
+      transition-delay: 0.1s;
+      transition-duration: 0.7s;
+
+      &.active {
+        transform: translate(0);
+      }
+    }
+    &_first-anim {
+      transform: translate(0,-10rem);
+      transition-duration: 0.7s;
+
+      &.active {
+        transform: translate(0);
+      }
+    }
   }
 
   &__first-name {
     font-size: 17.875rem;
     line-height: 14.75rem;
+    transform: translate(-31.25rem,0);
+    transition-delay: 0.2s;
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
   }
 
   &__scroll-down {
     writing-mode: vertical-rl;
-    transform: rotate(-180deg);
+    transform:translate(0,11.25rem) rotate(-180deg);
     text-align: center;
+    transition-delay: 0.2s;
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0) rotate(-180deg);
+    }
   }
 }
 
@@ -352,6 +388,8 @@ body {
     padding: 3.125rem 1.25rem 0;
     background-color: $text;
     border-radius: 2.5rem 2.5rem 0 0;
+
+
   }
 
   // .project__template-block
@@ -362,6 +400,25 @@ body {
 .title-block {
   &__title {
     font-size: 13.125rem;
+
+    &.anim-left {
+      transform: translate(-31.25rem,0);
+      transition-duration: 0.7s;
+
+      &.active {
+        transform: translate(0);
+      }
+    }
+
+    &.anim-right {
+      transform: translate(31.25rem,0);
+      transition-duration: 0.7s;
+
+      &.active {
+        transform: translate(0);
+      }
+    }
+
   }
 
   &__row {
@@ -377,6 +434,14 @@ body {
     width: 18.0625rem;
     margin-right: 4.375rem;
     padding-bottom: 3.125rem;
+
+    transform: translate(-31.25rem,0);
+    transition-delay: 0.2s;
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
   }
 
   &__year {

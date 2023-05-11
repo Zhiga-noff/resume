@@ -329,10 +329,13 @@ body.lock {
   }
 }
 
+.main__info_second-anim {
+  font-size: 300px;
+}
 .main {
   padding: 8.75rem 1.25rem 1.56rem 0.75rem;
   z-index: 3;
-  opacity: 0;
+  opacity: 1;
   transition-duration: 3s;
 }
 .main.active {
@@ -350,6 +353,11 @@ body.lock {
 .main__name {
   font-size: 17.875rem;
   line-height: 14.75rem;
+  transform: translate(-31.25rem, 0);
+  transition-duration: 0.7s;
+}
+.main__name.active {
+  transform: translate(0);
 }
 .main__column {
   display: flex;
@@ -363,6 +371,12 @@ body.lock {
 .main__first-name {
   font-size: 17.875rem;
   line-height: 14.75rem;
+  transform: translate(-31.25rem, 0);
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+.main__first-name.active {
+  transform: translate(0);
 }
 .main__scroll-down {
   writing-mode: vertical-rl;
