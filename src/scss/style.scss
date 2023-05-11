@@ -6,9 +6,6 @@
 
 // Добавляем шаблоны цветов
 @import 'colors.scss';
-
-@import "midnight.scss";
-
 html {
   font-size: calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
   //overflow-x: hidden;
@@ -43,6 +40,9 @@ body {
 
 .logo {
   font-size: 1.5rem;
+  &.white-header a{
+    color: #fff;
+  }
 
 
   a {

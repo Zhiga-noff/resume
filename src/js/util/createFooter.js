@@ -3,7 +3,7 @@ export function createFooter() {
   wrapper.insertAdjacentHTML(
     'beforeend',
     `
-  <footer data-midnight="white" class='footer footer_dark'>
+  <footer class='footer footer_dark'>
   <nav class='footer__row'>
     <div class='footer__block-with-link'>
       <h3 class='footer__title'>01/ карта сайта</h3>
