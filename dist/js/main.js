@@ -12,9 +12,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_functions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/functions */ "./js/modules/functions.js");
 /* harmony import */ var _modules_buttonMove__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/buttonMove */ "./js/modules/buttonMove.js");
 /* harmony import */ var _modules_animateElements__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/animateElements */ "./js/modules/animateElements.js");
-/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
-/* harmony import */ var _util_createHeader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util/createHeader */ "./js/util/createHeader.js");
-/* harmony import */ var _util_createFooter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/createFooter */ "./js/util/createFooter.js");
+/* harmony import */ var _modules_rename_description_in_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/rename-description-in-menu */ "./js/modules/rename-description-in-menu.js");
+/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../scss/style.scss */ "./scss/style.scss");
+/* harmony import */ var _util_createHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./util/createHeader */ "./js/util/createHeader.js");
+/* harmony import */ var _util_createFooter__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./util/createFooter */ "./js/util/createFooter.js");
+
 
 
 
@@ -30,8 +32,9 @@ __webpack_require__.r(__webpack_exports__);
 _modules_functions__WEBPACK_IMPORTED_MODULE_0__.isWebp();
 (0,_modules_buttonMove__WEBPACK_IMPORTED_MODULE_1__.buttonHoverAnimation)();
 (0,_modules_animateElements__WEBPACK_IMPORTED_MODULE_2__.addAnimateInDOM)();
-(0,_util_createHeader__WEBPACK_IMPORTED_MODULE_4__.createHeader)();
-(0,_util_createFooter__WEBPACK_IMPORTED_MODULE_5__.createFooter)();
+(0,_util_createHeader__WEBPACK_IMPORTED_MODULE_5__.createHeader)();
+(0,_util_createFooter__WEBPACK_IMPORTED_MODULE_6__.createFooter)();
+(0,_modules_rename_description_in_menu__WEBPACK_IMPORTED_MODULE_3__.renameDescription)();
 var burger = document.querySelector('.header__burger');
 var menu = document.querySelectorAll('.header__menu');
 var logo = document.querySelector('.logo');
@@ -221,6 +224,53 @@ function isWebp() {
 
 /***/ }),
 
+/***/ "./js/modules/rename-description-in-menu.js":
+/*!**************************************************!*\
+  !*** ./js/modules/rename-description-in-menu.js ***!
+  \**************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "renameDescription": function() { return /* binding */ renameDescription; }
+/* harmony export */ });
+/* harmony import */ var _util_page_info_arr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/page-info-arr */ "./js/util/page-info-arr.js");
+
+function renameDescription() {
+  // const headerLinks = document.querySelectorAll('.header__link');
+  var menuList = document.querySelector('.header__menu-list');
+  var infoPage = document.querySelector('.header__info-about-page');
+  menuList.addEventListener('mouseover', function (event) {
+    infoPage.classList.add('selected');
+    setTimeout(listener(event, _util_page_info_arr__WEBPACK_IMPORTED_MODULE_0__.pageMenu, infoPage), 3000);
+    // listener(event, pageMenu, infoPage);
+    // infoPage.classList.remove('selected');
+  });
+
+  menuList.addEventListener('mouseout', function () {
+    infoPage.classList.add('selected');
+    infoPage.textContent = '';
+    infoPage.insertAdjacentHTML('beforeend', "\n        <p class='header__number-page'>01/</p>\n        <p class='header__text-info'>\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u043C\u043E\u0435\u0433\u043E \u043F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>");
+  });
+  infoPage.classList.remove('selected');
+}
+function listener(event, array, info) {
+  var target = event.target;
+  var parent = target.closest('.header__link');
+  if (!parent) {
+    return;
+  }
+  array.forEach(function (element) {
+    if (parent.id === element.id) {
+      info.textContent = '';
+      info.insertAdjacentHTML('beforeend', "\n        <p class='header__number-page'>".concat(element.number, "</p>\n        <p class='header__text-info'>").concat(element.textInfo, "</p>\n        "));
+    }
+  });
+  info.classList.remove('selected');
+}
+
+/***/ }),
+
 /***/ "./js/util/createFooter.js":
 /*!*********************************!*\
   !*** ./js/util/createFooter.js ***!
@@ -250,8 +300,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function createHeader() {
   var wrapper = document.querySelector('.wrapper');
-  wrapper.insertAdjacentHTML('afterbegin', "\n  <header class='header' id='header'>\n  <div class='header__row'>\n    <div class='header__logo logo coluna'>\n      <a href='index.html'\n        >\u041A\u0416\n        <!-- <span class=\"logo__item\">\u0418</span>\n                           <span class=\"logo__item\">\u0420</span>\n                           <span class=\"logo__item\">\u0418</span>\n                           <span class=\"logo__item\">\u041B</span>\n                           <span class=\"logo__item\">\u041B</span> -->\n        <!-- <span class=\"logo__item\">\u0418</span>\n                           <span class=\"logo__item\">\u0413</span>\n                           <span class=\"logo__item\">\u0410</span>\n                           <span class=\"logo__item\">\u041D</span>\n                           <span class=\"logo__item\">\u041E</span>\n                           <span class=\"logo__item\">\u0412</span> -->\n      </a>\n    </div>\n    <div class='header__menu header__menu_left'>\n      <p class='header__wisw'>\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0443 \u0442\u0435\u0431\u044F \u043E\u0442\u043B\u0438\u0447\u043D\u044B\u0439 \u0434\u0435\u043D\u044C ;)</p>\n      <div class='header__info-about-page'>\n        <p class='header__number-page'>01/</p>\n        <p class='header__text-info'>\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u043C\u043E\u0435\u0433\u043E \u043F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>\n      </div>\n    </div>\n    <div class='header__menu header__menu_right'>\n      <div class='header__my-name'>\n        <p class=''>\u041A\u0438\u0440\u0438\u043B\u043B \u0416\u0438\u0433\u0430\u043D\u043E\u0432 - \u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>\n      </div>\n      <ul class='header__menu-list'>\n        <li>\n          <a href='#' class='header__link active'>\n            <p class='header__number-page header__number-page_visible'>01/</p>\n            <p class='header__link-page'>\u0413\u043B\u0430\u0432\u043D\u0430\u044F</p>\n          </a>\n        </li>\n        <li>\n          <a href='#' class='header__link'>\n            <p class='header__number-page header__number-page_visible'>02/</p>\n            <p class='header__link-page'>\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>\n          </a>\n        </li>\n        <li>\n          <a href='#' class='header__link'>\n            <p class='header__number-page header__number-page_visible'>03/</p>\n            <p class='header__link-page'>\u041E\u0431\u043E \u043C\u043D\u0435</p>\n          </a>\n        </li>\n        <li>\n          <a href='#' class='header__link'>\n            <p class='header__number-page header__number-page_visible'>04/</p>\n            <p class='header__link-page'>\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B</p>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <div class='header__burger'></div>\n  </div>\n</header>\n\n  ");
+  wrapper.insertAdjacentHTML('afterbegin', "\n  <header class='header' id='header'>\n  <div class='header__row'>\n    <div class='header__logo logo coluna'>\n      <a href='index.html'\n        >\u041A\u0416\n        <!-- <span class=\"logo__item\">\u0418</span>\n                           <span class=\"logo__item\">\u0420</span>\n                           <span class=\"logo__item\">\u0418</span>\n                           <span class=\"logo__item\">\u041B</span>\n                           <span class=\"logo__item\">\u041B</span> -->\n        <!-- <span class=\"logo__item\">\u0418</span>\n                           <span class=\"logo__item\">\u0413</span>\n                           <span class=\"logo__item\">\u0410</span>\n                           <span class=\"logo__item\">\u041D</span>\n                           <span class=\"logo__item\">\u041E</span>\n                           <span class=\"logo__item\">\u0412</span> -->\n      </a>\n    </div>\n    <div class='header__menu header__menu_left'>\n      <p class='header__wisw'>\u041D\u0430\u0434\u0435\u044E\u0441\u044C, \u0443 \u0442\u0435\u0431\u044F \u043E\u0442\u043B\u0438\u0447\u043D\u044B\u0439 \u0434\u0435\u043D\u044C ;)</p>\n      <div class='header__info-about-page'>\n        <p class='header__number-page'>01/</p>\n        <p class='header__text-info'>\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u043C\u043E\u0435\u0433\u043E \u043F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>\n      </div>\n    </div>\n    <div class='header__menu header__menu_right'>\n      <div class='header__my-name'>\n        <p class=''>\u041A\u0438\u0440\u0438\u043B\u043B \u0416\u0438\u0433\u0430\u043D\u043E\u0432 - \u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>\n      </div>\n      <ul class='header__menu-list'>\n        <li>\n          <a href='#' class='header__link active' id=\"main-item\">\n            <p class='header__number-page header__number-page_visible'>01/</p>\n            <p class='header__link-page'>\u0413\u043B\u0430\u0432\u043D\u0430\u044F</p>\n          </a>\n        </li>\n        <li>\n          <a href='#' class='header__link' id=\"portfolio-item\">\n            <p class='header__number-page header__number-page_visible'>02/</p>\n            <p class='header__link-page'>\u041F\u043E\u0440\u0442\u0444\u043E\u043B\u0438\u043E</p>\n          </a>\n        </li>\n        <li>\n          <a href='#' class='header__link' id=\"about-item\">\n            <p class='header__number-page header__number-page_visible'>03/</p>\n            <p class='header__link-page'>\u041E\u0431\u043E \u043C\u043D\u0435</p>\n          </a>\n        </li>\n        <li>\n          <a href='#' class='header__link' id=\"contacts-item\">\n            <p class='header__number-page header__number-page_visible'>04/</p>\n            <p class='header__link-page'>\u041A\u043E\u043D\u0442\u0430\u043A\u0442\u044B</p>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <div class='header__burger'></div>\n  </div>\n</header>\n\n  ");
 }
+
+/***/ }),
+
+/***/ "./js/util/page-info-arr.js":
+/*!**********************************!*\
+  !*** ./js/util/page-info-arr.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "pageMenu": function() { return /* binding */ pageMenu; }
+/* harmony export */ });
+var pageMenu = [{
+  id: 'main-item',
+  number: '01/',
+  textInfo: 'Главная страница моего портфолио'
+}, {
+  id: 'portfolio-item',
+  number: '02/',
+  textInfo: 'Тут вы найдете все проекты'
+}, {
+  id: 'about-item',
+  number: '03/',
+  textInfo: 'Совсем немного обо мне'
+}, {
+  id: 'contacts-item',
+  number: '04/',
+  textInfo: 'То что нужно что бы связаться'
+}];
 
 /***/ }),
 

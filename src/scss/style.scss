@@ -10,6 +10,21 @@
 // Отдельные стили для оформления анимации проектов на главной страницы
 @import 'project-main-page.scss';
 
+@keyframes change-information-in-header {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-11.25rem, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 html {
   font-size: calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
   //overflow-x: hidden;
@@ -146,8 +161,12 @@ body {
   // &__wisw {
   // }
 
-  // &__info-about-page {
-  // }
+  &__info-about-page {
+    &.selected {
+      animation-name: change-information-in-header;
+      animation-duration: 1s;
+    }
+  }
 
   &__number-page {
     opacity: 0.6;
