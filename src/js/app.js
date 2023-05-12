@@ -4,6 +4,7 @@ import {
   addAnimateInDOM,
   recolorHeaderAndBurger
 } from './modules/animateElements';
+import { renameDescription } from './modules/rename-description-in-menu';
 
 // Подключение стилей
 import '../scss/style.scss';
@@ -20,6 +21,8 @@ addAnimateInDOM();
 
 createHeader();
 createFooter();
+
+renameDescription();
 
 const burger = document.querySelector('.header__burger');
 const menu = document.querySelectorAll('.header__menu');

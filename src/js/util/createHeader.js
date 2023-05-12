@@ -34,25 +34,25 @@ export function createHeader() {
       </div>
       <ul class='header__menu-list'>
         <li>
-          <a href='#' class='header__link active'>
+          <a href='#' class='header__link active' id="main-item">
             <p class='header__number-page header__number-page_visible'>01/</p>
             <p class='header__link-page'>Главная</p>
           </a>
         </li>
         <li>
-          <a href='#' class='header__link'>
+          <a href='#' class='header__link' id="portfolio-item">
             <p class='header__number-page header__number-page_visible'>02/</p>
             <p class='header__link-page'>Портфолио</p>
           </a>
         </li>
         <li>
-          <a href='#' class='header__link'>
+          <a href='#' class='header__link' id="about-item">
             <p class='header__number-page header__number-page_visible'>03/</p>
             <p class='header__link-page'>Обо мне</p>
           </a>
         </li>
         <li>
-          <a href='#' class='header__link'>
+          <a href='#' class='header__link' id="contacts-item">
             <p class='header__number-page header__number-page_visible'>04/</p>
             <p class='header__link-page'>Контакты</p>
           </a>
