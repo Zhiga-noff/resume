@@ -46,10 +46,6 @@ burger.addEventListener('click', function (event) {
   bodyElement.classList.toggle('lock');
   burger.classList.toggle('active');
 });
-_modules_functions__WEBPACK_IMPORTED_MODULE_0__.recolorBurger(logo, burger);
-window.addEventListener('scroll', function () {
-  _modules_functions__WEBPACK_IMPORTED_MODULE_0__.recolorBurger(logo, burger);
-});
 
 /***/ }),
 
@@ -204,8 +200,7 @@ function buttonHoverAnimation() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "isWebp": function() { return /* binding */ isWebp; },
-/* harmony export */   "recolorBurger": function() { return /* binding */ recolorBurger; }
+/* harmony export */   "isWebp": function() { return /* binding */ isWebp; }
 /* harmony export */ });
 function isWebp() {
   function testWebP(callback) {
@@ -222,17 +217,6 @@ function isWebp() {
       document.querySelector('body').classList.add('no-webp');
     }
   });
-}
-function recolorBurger(logo, burger) {
-  var midnightWhite = logo.querySelector('.white');
-  var current = midnightWhite.style.transform;
-  current = current.replaceAll('translateY(', '');
-  current = current.replaceAll('%) translateZ(0px)', '');
-  if (current <= 80 && current >= -14) {
-    burger.classList.add('white-burger');
-  } else {
-    burger.classList.remove('white-burger');
-  }
 }
 
 /***/ }),

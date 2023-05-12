@@ -16,15 +16,3 @@ export function isWebp() {
     }
   });
 }
-
-export function recolorBurger(logo, burger) {
-  const midnightWhite = logo.querySelector('.white')
-  let current = midnightWhite.style.transform
-  current = current.replaceAll('translateY(','')
-  current = current.replaceAll('%) translateZ(0px)','')
-  if (current <=80 && current>= -14) {
-    burger.classList.add('white-burger')
-  } else {
-    burger.classList.remove('white-burger')
-  }
-}

@@ -98,6 +98,82 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
   font-style: normal;
 }
+.template-block {
+  background-color: #252525;
+}
+.template-block__description {
+  transform: translate(-31.25rem, 0);
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+.template-block__description.active {
+  transform: translate(0);
+}
+.template-block__name-company {
+  transform: translate(-31.25rem, 0);
+  transition-duration: 0.7s;
+}
+.template-block__name-company.active {
+  transform: translate(0);
+}
+.template-block__number {
+  transform: translate(31.25rem, 3rem);
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+.template-block__number.active {
+  transform: translate(0, 3rem);
+}
+.template-block__logo {
+  background-color: #515151;
+  padding: 4.6rem;
+  transform: translate(31.25rem, 0);
+  transition-duration: 0.7s;
+}
+.template-block__logo.active {
+  transform: translate(0);
+}
+
+.avtooko24 {
+  background-color: #252525;
+}
+.avtooko24 .template-block__logo {
+  background-color: #515151;
+  padding: 4.6rem;
+}
+
+.arusnavi {
+  background-color: #006f9d;
+}
+.arusnavi .template-block__logo {
+  background-color: #338cb1;
+  padding: 4.6rem 2rem;
+}
+
+.busyfly {
+  background-color: #301552;
+}
+.busyfly .template-block__logo {
+  background-color: #594475;
+  padding: 2.9rem 5rem;
+}
+
+.solomon {
+  background-color: #1d2649;
+}
+.solomon .template-block__logo {
+  background-color: #4a516d;
+  padding: 3.2rem;
+}
+
+.alcomarket {
+  background-color: #89001e;
+}
+.alcomarket .template-block__logo {
+  background-color: #a1334b;
+  padding: 2.8rem;
+}
+
 html {
   font-size: calc(14px + 18 * (100vw - 320px) / 1600);
 }
@@ -329,9 +405,6 @@ body.lock {
   }
 }
 
-.main__info_second-anim {
-  font-size: 300px;
-}
 .main {
   padding: 8.75rem 1.25rem 1.56rem 0.75rem;
   z-index: 3;
@@ -368,6 +441,21 @@ body.lock {
 .main__info {
   width: 11.75rem;
 }
+.main__info_second-anim {
+  transform: translate(0, -10rem);
+  transition-delay: 0.1s;
+  transition-duration: 0.7s;
+}
+.main__info_second-anim.active {
+  transform: translate(0);
+}
+.main__info_first-anim {
+  transform: translate(0, -10rem);
+  transition-duration: 0.7s;
+}
+.main__info_first-anim.active {
+  transform: translate(0);
+}
 .main__first-name {
   font-size: 17.875rem;
   line-height: 14.75rem;
@@ -380,8 +468,13 @@ body.lock {
 }
 .main__scroll-down {
   writing-mode: vertical-rl;
-  transform: rotate(-180deg);
+  transform: translate(0, 11.25rem) rotate(-180deg);
   text-align: center;
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+.main__scroll-down.active {
+  transform: translate(0) rotate(-180deg);
 }
 
 .project {
@@ -397,6 +490,20 @@ body.lock {
 .title-block__title {
   font-size: 13.125rem;
 }
+.title-block__title.anim-left {
+  transform: translate(-31.25rem, 0);
+  transition-duration: 0.7s;
+}
+.title-block__title.anim-left.active {
+  transform: translate(0);
+}
+.title-block__title.anim-right {
+  transform: translate(31.25rem, 0);
+  transition-duration: 0.7s;
+}
+.title-block__title.anim-right.active {
+  transform: translate(0);
+}
 .title-block__row {
   display: flex;
   justify-content: space-between;
@@ -409,6 +516,12 @@ body.lock {
   width: 18.0625rem;
   margin-right: 4.375rem;
   padding-bottom: 3.125rem;
+  transform: translate(-31.25rem, 0);
+  transition-delay: 0.2s;
+  transition-duration: 0.7s;
+}
+.title-block__timeline.active {
+  transform: translate(0);
 }
 .title-block__underline {
   width: 60%;
@@ -458,7 +571,6 @@ body.lock {
 .template-block__number {
   opacity: 0.2;
   font-size: 7.5rem;
-  transform: translatey(3rem);
   z-index: 1;
 }
 .template-block__logo {
@@ -488,12 +600,25 @@ body.lock {
   max-width: 7rem;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  transform: translate(0, -31.25rem);
+  opacity: 0;
+  transition-duration: 0.7s;
+}
+.about-info__lite-info.active {
+  opacity: 1;
+  transform: translate(0);
 }
 .about-info__paragraph {
   margin-bottom: 3.125rem;
 }
 .about-info__big-info {
   font-size: 6.25rem;
+  transform: translate(-31.25rem, 0);
+  transition-delay: 0.1s;
+  transition-duration: 0.7s;
+}
+.about-info__big-info.active {
+  transform: translate(0);
 }
 
 .footer {
@@ -541,46 +666,6 @@ body.lock {
   font-size: 10rem;
   text-align: center;
   margin: 0 auto;
-}
-
-.avtooko24 {
-  background-color: #252525;
-}
-.avtooko24 .template-block__logo {
-  background-color: #515151;
-  padding: 4.6rem;
-}
-
-.arusnavi {
-  background-color: #006f9d;
-}
-.arusnavi .template-block__logo {
-  background-color: #338cb1;
-  padding: 4.6rem 2rem;
-}
-
-.busyfly {
-  background-color: #301552;
-}
-.busyfly .template-block__logo {
-  background-color: #594475;
-  padding: 2.9rem 5rem;
-}
-
-.solomon {
-  background-color: #1d2649;
-}
-.solomon .template-block__logo {
-  background-color: #4a516d;
-  padding: 3.2rem;
-}
-
-.alcomarket {
-  background-color: #89001e;
-}
-.alcomarket .template-block__logo {
-  background-color: #a1334b;
-  padding: 2.8rem;
 }
 
 /*# sourceMappingURL=main.css.map*/

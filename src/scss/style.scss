@@ -6,6 +6,10 @@
 
 // Добавляем шаблоны цветов
 @import 'colors.scss';
+
+// Отдельные стили для оформления анимации проектов на главной страницы
+@import 'project-main-page.scss';
+
 html {
   font-size: calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
   //overflow-x: hidden;
@@ -40,10 +44,10 @@ body {
 
 .logo {
   font-size: 1.5rem;
-  &.white-header a{
+
+  &.white-header a {
     color: #fff;
   }
-
 
   a {
     width: 100px;
@@ -236,7 +240,8 @@ body {
     }
 
     &.white-burger {
-      &:before, &:after {
+      &:before,
+      &:after {
         background-color: white;
       }
     }
@@ -308,7 +313,7 @@ body {
   &__name {
     font-size: 17.875rem;
     line-height: 14.75rem;
-    transform: translate(-31.25rem,0);
+    transform: translate(-31.25rem, 0);
     transition-duration: 0.7s;
 
     &.active {
@@ -325,8 +330,9 @@ body {
 
   &__info {
     width: 11.75rem;
+
     &_second-anim {
-      transform: translate(0,-10rem);
+      transform: translate(0, -10rem);
       transition-delay: 0.1s;
       transition-duration: 0.7s;
 
@@ -334,8 +340,9 @@ body {
         transform: translate(0);
       }
     }
+
     &_first-anim {
-      transform: translate(0,-10rem);
+      transform: translate(0, -10rem);
       transition-duration: 0.7s;
 
       &.active {
@@ -347,7 +354,7 @@ body {
   &__first-name {
     font-size: 17.875rem;
     line-height: 14.75rem;
-    transform: translate(-31.25rem,0);
+    transform: translate(-31.25rem, 0);
     transition-delay: 0.2s;
     transition-duration: 0.7s;
 
@@ -358,7 +365,7 @@ body {
 
   &__scroll-down {
     writing-mode: vertical-rl;
-    transform:translate(0,11.25rem) rotate(-180deg);
+    transform: translate(0, 11.25rem) rotate(-180deg);
     text-align: center;
     transition-delay: 0.2s;
     transition-duration: 0.7s;
@@ -388,8 +395,6 @@ body {
     padding: 3.125rem 1.25rem 0;
     background-color: $text;
     border-radius: 2.5rem 2.5rem 0 0;
-
-
   }
 
   // .project__template-block
@@ -402,7 +407,7 @@ body {
     font-size: 13.125rem;
 
     &.anim-left {
-      transform: translate(-31.25rem,0);
+      transform: translate(-31.25rem, 0);
       transition-duration: 0.7s;
 
       &.active {
@@ -411,14 +416,13 @@ body {
     }
 
     &.anim-right {
-      transform: translate(31.25rem,0);
+      transform: translate(31.25rem, 0);
       transition-duration: 0.7s;
 
       &.active {
         transform: translate(0);
       }
     }
-
   }
 
   &__row {
@@ -435,7 +439,7 @@ body {
     margin-right: 4.375rem;
     padding-bottom: 3.125rem;
 
-    transform: translate(-31.25rem,0);
+    transform: translate(-31.25rem, 0);
     transition-delay: 0.2s;
     transition-duration: 0.7s;
 
@@ -511,7 +515,6 @@ body {
   &__number {
     opacity: 0.2;
     font-size: 7.5rem;
-    transform: translatey(3rem);
     z-index: 1;
   }
 
@@ -547,6 +550,15 @@ body {
     max-width: 7rem;
     text-transform: uppercase;
     margin-bottom: 1rem;
+
+    transform: translate(0, -31.25rem);
+    opacity: 0;
+    transition-duration: 0.7s;
+
+    &.active {
+      opacity: 1;
+      transform: translate(0);
+    }
   }
 
   // .about-info__paragraph
@@ -557,6 +569,14 @@ body {
   // .about-info__big-info
   &__big-info {
     font-size: 6.25rem;
+
+    transform: translate(-31.25rem, 0);
+    transition-delay: 0.1s;
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
   }
 }
 
@@ -623,59 +643,5 @@ body {
     font-size: 10rem;
     text-align: center;
     margin: 0 auto;
-  }
-}
-
-.coluna {
-}
-
-.coluna {
-}
-
-.avtooko24 {
-  background-color: #252525;
-
-  .template-block__logo {
-    background-color: #515151;
-    padding: 4.6rem;
-  }
-}
-
-.button-move {
-}
-
-.arusnavi {
-  background-color: #006f9d;
-
-  .template-block__logo {
-    background-color: #338cb1;
-    padding: 4.6rem 2rem;
-  }
-}
-
-.busyfly {
-  background-color: #301552;
-
-  .template-block__logo {
-    background-color: #594475;
-    padding: 2.9rem 5rem;
-  }
-}
-
-.solomon {
-  background-color: #1d2649;
-
-  .template-block__logo {
-    background-color: #4a516d;
-    padding: 3.2rem;
-  }
-}
-
-.alcomarket {
-  background-color: #89001e;
-
-  .template-block__logo {
-    background-color: #a1334b;
-    padding: 2.8rem;
   }
 }

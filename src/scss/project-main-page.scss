@@ -1,0 +1,89 @@
+.template-block {
+  background-color: #252525;
+
+  &__description {
+    transform: translate(-31.25rem, 0);
+    transition-delay: 0.2s;
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
+  }
+
+  &__name-company {
+    transform: translate(-31.25rem, 0);
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
+  }
+
+  &__number {
+    transform: translate(31.25rem, 3rem);
+    transition-delay: 0.2s;
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0, 3rem);
+    }
+  }
+
+  &__logo {
+    background-color: #515151;
+    padding: 4.6rem;
+
+    transform: translate(31.25rem, 0);
+    transition-duration: 0.7s;
+
+    &.active {
+      transform: translate(0);
+    }
+  }
+}
+
+.avtooko24 {
+  background-color: #252525;
+
+  .template-block__logo {
+    background-color: #515151;
+    padding: 4.6rem;
+  }
+}
+
+.arusnavi {
+  background-color: #006f9d;
+
+  .template-block__logo {
+    background-color: #338cb1;
+    padding: 4.6rem 2rem;
+  }
+}
+
+.busyfly {
+  background-color: #301552;
+
+  .template-block__logo {
+    background-color: #594475;
+    padding: 2.9rem 5rem;
+  }
+}
+
+.solomon {
+  background-color: #1d2649;
+
+  .template-block__logo {
+    background-color: #4a516d;
+    padding: 3.2rem;
+  }
+}
+
+.alcomarket {
+  background-color: #89001e;
+
+  .template-block__logo {
+    background-color: #a1334b;
+    padding: 2.8rem;
+  }
+}
